@@ -82,11 +82,49 @@
                     <connections>
                         <outlet property="userEmail" destination="w1k-SB-UFc" id="bvQ-rK-1w4"/>
                         <outlet property="userPassword" destination="nbc-rx-eaU" id="Qop-oR-5M9"/>
+                        <segue destination="vwb-sA-R6T" kind="show" identifier="loginSegue" id="pgs-nH-a43"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="133.92857142857142"/>
+        </scene>
+        <!--List of Tasks-->
+        <scene sceneID="32p-xc-WLp">
+            <objects>
+                <viewController id="y8x-FH-h06" customClass="TasksViewController" customModule="TodoAppV2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kUr-fD-r3N">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="b2q-BX-NU7"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="List of Tasks" id="JxR-9E-WZH">
+                        <barButtonItem key="leftBarButtonItem" title="Sign Out" id="co4-op-pIC"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="MkL-sz-Jem"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JHU-1K-3eb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1654" y="134"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="AvN-RI-JFv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vwb-sA-R6T" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OcY-Db-vld">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="y8x-FH-h06" kind="relationship" relationship="rootViewController" id="Ggm-cz-GfC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A6e-tS-weA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="882.60869565217399" y="133.92857142857142"/>
         </scene>
     </scenes>
 </document>

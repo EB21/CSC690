@@ -14,6 +14,8 @@ class LogInSignUpViewController: UIViewController {
 
     @IBOutlet weak var userEmail: UITextField!
     @IBOutlet weak var userPassword: UITextField!
+    var uid: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,9 +29,10 @@ class LogInSignUpViewController: UIViewController {
                     print("AN ERROR HAS OCCURRED")
                 }
                 else {
-                    let uid = result?.user.uid
-                    let ref = Database.database().reference(withPath: "users").child(uid!)
+                    self.uid = (result?.user.uid)!
+                    let ref = Database.database().reference(withPath: "users").child(self.uid)
                     ref.setValue(["email": self.userEmail.text!, "password": self.userPassword.text!])
+                    self.performSegue(withIdentifier: "loginSegue", sender: self)
                 }
             }
         }
@@ -42,12 +45,18 @@ class LogInSignUpViewController: UIViewController {
                     print("AN ERROR HAS OCCURRED")
                 }
                 else {
-                    //let uid = result?.user.uid
+                    self.uid = (result?.user.uid)!
+                    self.performSegue(withIdentifier: "loginSegue", sender: self)
 
                 }
             }
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let navigation = segue.destination as! UINavigationController
+        let tasksVC = navigation.topViewController as! TasksViewController
+        tasksVC.userID = uid
+    }
 
 }
