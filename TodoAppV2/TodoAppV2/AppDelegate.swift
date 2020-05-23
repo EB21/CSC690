@@ -6,6 +6,7 @@
 //  Copyright © 2020 Edward Barajas. All rights reserved.
 //
 
+import Firebase //Need to import Firebase library so we can use Firebase in our app
 import UIKit
 
 @UIApplicationMain
@@ -16,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        FirebaseApp.configure() //Configuring Firebase so we can use it in our app
         return true
     }
 
