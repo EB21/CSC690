@@ -160,7 +160,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="List of Tasks" id="JxR-9E-WZH">
                         <barButtonItem key="leftBarButtonItem" title="Sign Out" id="co4-op-pIC"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="MkL-sz-Jem"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="MkL-sz-Jem">
+                            <connections>
+                                <action selector="addNewTask:" destination="y8x-FH-h06" id="ZYo-Me-qfD"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tasksTableView" destination="ofZ-5c-obo" id="q3s-vO-WY3"/>

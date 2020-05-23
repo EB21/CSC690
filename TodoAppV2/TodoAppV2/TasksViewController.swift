@@ -38,6 +38,22 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func addNewTask(_ sender: Any) {
+        let taskAlert = UIAlertController(title: "Add Task", message: "Create A New Task", preferredStyle: .alert)
+        taskAlert.addTextField()
+        let addNewTaskAction = UIAlertAction(title: "Add", style: .default) { (action) in
+            let taskText = taskAlert.textFields![0].text
+            self.tasks.append(Task(taskCompleted: false, taskName: taskText!))
+            let ref = Database.database().reference(withPath: "users").child(self.userID!).child("tasks")
+            ref.child(taskText!).setValue(["taskCompleted": false])
+            self.tasksTableView.reloadData()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default)
+        taskAlert.addAction(addNewTaskAction)
+        taskAlert.addAction(cancelAction)
+        present(taskAlert, animated: true, completion: nil)
+    }
+    
     func loadTasks() {
         let ref = Database.database().reference(withPath: "users").child(userID!).child("tasks")
         ref.observeSingleEvent(of: .value) { (snapshot) in
