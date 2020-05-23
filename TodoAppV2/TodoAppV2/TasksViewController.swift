@@ -10,10 +10,15 @@ import UIKit
 
 class TasksViewController: UIViewController {
 
+    @IBOutlet weak var userIDLabel: UILabel!
     var userID: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let uid = userID {
+            userIDLabel.text = uid
+        }
 
         // Do any additional setup after loading the view.
     }
