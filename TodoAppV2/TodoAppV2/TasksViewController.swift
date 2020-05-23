@@ -73,5 +73,27 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let ref = Database.database().reference(withPath: "users").child(userID!).child("tasks").child(tasks[indexPath.row].taskName)
+        if tasks[indexPath.row].taskCompleted {
+            tasks[indexPath.row].taskCompleted = false
+            ref.updateChildValues(["taskCompleted": false])
+        }
+        else {
+            tasks[indexPath.row].taskCompleted = true
+            ref.updateChildValues(["taskCompleted": true])
+        }
+        tasksTableView.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let ref = Database.database().reference(withPath: "users").child(userID!).child("tasks").child(tasks[indexPath.row].taskName)
+            ref.removeValue()
+            tasks.remove(at: indexPath.row)
+            tasksTableView.reloadData()
+        }
+    }
 
 }
