@@ -18,6 +18,7 @@
 		7F7932802478BE3A00400EA9 /* TodoAppV2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F79327F2478BE3A00400EA9 /* TodoAppV2Tests.swift */; };
 		7F79328B2478C0C700400EA9 /* LogInSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F79328A2478C0C700400EA9 /* LogInSignUpViewController.swift */; };
 		7F79328D2478C1E500400EA9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F79328C2478C1E500400EA9 /* GoogleService-Info.plist */; };
+		7FF663D02478E6EB00269C16 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF663CF2478E6EB00269C16 /* TaskCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		7F7932812478BE3A00400EA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F79328A2478C0C700400EA9 /* LogInSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInSignUpViewController.swift; sourceTree = "<group>"; };
 		7F79328C2478C1E500400EA9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7FF663CF2478E6EB00269C16 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		8F54248E9C76CE59B65EB6ED /* Pods-TodoAppV2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoAppV2Tests.debug.xcconfig"; path = "Target Support Files/Pods-TodoAppV2Tests/Pods-TodoAppV2Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		E0C646473DA47E658C1F689D /* Pods_TodoAppV2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodoAppV2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -104,6 +106,7 @@
 				7F7932762478BE3900400EA9 /* Info.plist */,
 				7F79328A2478C0C700400EA9 /* LogInSignUpViewController.swift */,
 				7F2616A42478C8B60049F538 /* TasksViewController.swift */,
+				7FF663CF2478E6EB00269C16 /* TaskCell.swift */,
 			);
 			path = TodoAppV2;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				7F2616A52478C8B60049F538 /* TasksViewController.swift in Sources */,
 				7F79326B2478BE3900400EA9 /* AppDelegate.swift in Sources */,
 				7F79328B2478C0C700400EA9 /* LogInSignUpViewController.swift in Sources */,
+				7FF663D02478E6EB00269C16 /* TaskCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
