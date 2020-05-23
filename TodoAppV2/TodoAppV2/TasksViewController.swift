@@ -25,17 +25,30 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        greetUser()
+        
         tasksTableView.delegate = self
         tasksTableView.dataSource = self
         tasksTableView.rowHeight = 80
         
-        if let uid = userID {
-            userIDLabel.text = uid
-        }
-        
         loadTasks()
 
         // Do any additional setup after loading the view.
+    }
+    
+    func greetUser() {
+        let userRef = Database.database().reference(withPath: "users").child(userID!)
+        userRef.observeSingleEvent(of: .value) { (snapshot)in
+            let value = snapshot.value as? NSDictionary
+            let email = value!["email"] as? String
+            self.userIDLabel.text = "Hi " + email!
+            
+        }
+    }
+    
+    @IBAction func userSignOut(_ sender: Any) {
+        try! Auth.auth().signOut()
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func addNewTask(_ sender: Any) {

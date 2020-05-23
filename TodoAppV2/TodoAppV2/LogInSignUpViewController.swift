@@ -18,9 +18,17 @@ class LogInSignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        userEmail.text = ""
+        userPassword.text = ""
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        userEmail.text = ""
+        userPassword.text = ""
+    }
+    
     
     @IBAction func userSignUp(_ sender: Any) {
         if userEmail.text != nil && userPassword.text != nil {

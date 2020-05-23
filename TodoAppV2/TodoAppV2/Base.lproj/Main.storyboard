@@ -159,7 +159,11 @@
                         <viewLayoutGuide key="safeArea" id="b2q-BX-NU7"/>
                     </view>
                     <navigationItem key="navigationItem" title="List of Tasks" id="JxR-9E-WZH">
-                        <barButtonItem key="leftBarButtonItem" title="Sign Out" id="co4-op-pIC"/>
+                        <barButtonItem key="leftBarButtonItem" title="Sign Out" id="co4-op-pIC">
+                            <connections>
+                                <action selector="userSignOut:" destination="y8x-FH-h06" id="S4k-pE-4zi"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="MkL-sz-Jem">
                             <connections>
                                 <action selector="addNewTask:" destination="y8x-FH-h06" id="ZYo-Me-qfD"/>
